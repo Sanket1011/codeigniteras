@@ -10,10 +10,7 @@ class Product extends CI_Model{
         $this->ordItemsTable = 'order_items';
     }
     
-    /*
-     * Fetch products data from the database
-     * @param id returns a single record if specified, otherwise all records
-     */
+    
     public function getRows($id = ''){
         $this->db->select('*');
         $this->db->from($this->proTable);
@@ -32,10 +29,7 @@ class Product extends CI_Model{
         return !empty($result)?$result:false;
     }
     
-    /*
-     * Fetch order data from the database
-     * @param id returns a single record of the specified ID
-     */
+   
     public function getOrder($id){
         $this->db->select('o.*, c.name, c.email, c.phone, c.address');
         $this->db->from($this->ordTable.' as o');
@@ -55,11 +49,7 @@ class Product extends CI_Model{
         // Return fetched data
         return !empty($result)?$result:false;
     }
-    
-    /*
-     * Insert customer data in the database
-     * @param data array
-     */
+  
     public function insertCustomer($data){
         // Add created and modified date if not included
         if(!array_key_exists("created", $data)){
@@ -76,10 +66,7 @@ class Product extends CI_Model{
         return $insert?$this->db->insert_id():false;
     }
 
-    /*
-     * Insert order data in the database
-     * @param data array
-     */
+  
     public function insertOrder($data){
         // Add created and modified date if not included
         if(!array_key_exists("created", $data)){
@@ -96,10 +83,7 @@ class Product extends CI_Model{
         return $insert?$this->db->insert_id():false;
     }
     
-    /*
-     * Insert order items data in the database
-     * @param data array
-     */
+   
     public function insertOrderItems($data = array()) {
         
         // Insert order items
