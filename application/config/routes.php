@@ -53,7 +53,7 @@ $route['default_controller'] = 'Products';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-/*For Admin Panel*/
+/*For Admin Panel - TASK 2*/
 $route['products'] = "AdminProducts/index";
 $route['productsCreate']['post'] = "AdminProducts/store";
 $route['productsEdit/(:any)'] = "AdminProducts/edit/$1";
